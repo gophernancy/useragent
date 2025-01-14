@@ -551,7 +551,8 @@ func (p properties) getIndexValue(key string) (int, string) {
 
 func (p properties) exists(key string) bool {
 	for _, prop := range p.list {
-		if prop.Key == key {
+		if strings.Contains(prop.Key, key) {
+		// if prop.Key == key {
 			return true
 		}
 	}
